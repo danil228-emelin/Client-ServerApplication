@@ -1,0 +1,13 @@
+body{
+    background: black;
+    display: flex;
+    margin: 0px;
+    align-items: center;
+    gap:20px;
+    color: #ff002f;
+    font-size: 10px;
+    flex-flow: column;
+}
+body #nigaPicture{
+    margin-left:-1000px;
+}
