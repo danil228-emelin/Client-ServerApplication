@@ -4,6 +4,8 @@ services:
   db:
     container_name: db
     image: postgres:alpine
+    networks:
+      - postgres
     ports:
       - '5432:5432'
     environment:
@@ -12,7 +14,13 @@ services:
       - 'POSTGRES_PASSWORD=postgres'
 
   backend:
+    networks:
+      - postgres
     build: .
     ports:
       - '8080:8080'
-
+    depends_on:
+      - db
+networks:
+  postgres:
+    driver: bridge
